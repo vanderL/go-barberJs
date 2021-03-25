@@ -1,3 +1,6 @@
-const app = require('./app')
+/* eslint-disable prettier/prettier */
+/* eslint-disable linebreak-style */
 
-app.listen(3333)
+import app from './app';
+
+app.listen(3333);
