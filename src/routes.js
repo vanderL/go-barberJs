@@ -1,9 +1,9 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable linebreak-style */
 import { Router } from 'express';
+
+import UserController from './app/controller/UserController'
 
 const routes = new Router();
 
-routes.get('/', (req, res) => res.json({ message: 'hello' }));
+routes.post('/users', UserController.store);
 
 export default routes;
