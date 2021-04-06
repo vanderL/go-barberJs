@@ -17,6 +17,7 @@ class ProviderController {
 
         return res.json(providers);
     }
+
 }
 
 export default new ProviderController();
