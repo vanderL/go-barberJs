@@ -1,0 +1,10 @@
+POSTGRES:
+    docker run --name database -e POSTGRES_PASSWORD=docker -p 5433:5432 -d postgres:11
+
+MONGODB:
+    docker run --name mongobarber -p 27018:27017 -d -t mongo
+
+REDIS:
+    docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
+
+    yarn sequelize db:migrate
