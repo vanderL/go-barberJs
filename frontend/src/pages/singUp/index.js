@@ -3,11 +3,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 
+import * as Yup from 'yup';
+
 import logo from '../../assets/logo.svg';
 
-// import { Container } from './styles';
+const schema = Yup.object().shape({
+  name: Yup.string('Isira um nome')
+    .required('Nome é obrigatorio'),
+  email: Yup.string()
+    .email('Isira um e-mail válido')
+    .required('O email é obrigatorio'),
+  password: Yup.string().required('A senha é obrigatório'),
+});
 
 export default function SingUp() {
+  
+  
   function handleSubmit(data) {
     console.tron.log(data);
   }
@@ -16,13 +27,13 @@ export default function SingUp() {
     <>
       <img src={logo} alt="GoBarber" />
 
-      <Form onSubmit={handleSubmit}>
+      <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="name" type="text" placeholder="Nome completo" />
         <Input name="email" type="email" placeholder="Seu e-mail" />
         <Input name="password" type="password" placeholder="Sua senha" />
 
         <button type="submit"> Criar conta </button>
-        <Link> Já tenho login </Link>
+        <Link to="/"> Já tenho login </Link>
       </Form>
     </>
   )

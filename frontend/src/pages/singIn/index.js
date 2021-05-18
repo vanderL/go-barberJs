@@ -2,11 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 
+import * as Yup from 'yup';
 
 import logo from '../../assets/logo.svg';
 
-// import { Container } from './styles';
-
+const schema = Yup.object().shape({
+  email: Yup.string()
+    .email('Isira um e-mail válido')
+    .required('O email é obrigatorio'),
+  password: Yup.string().required('A senha é obrigatório'),
+});
 
 export default function singIn() {
   function handleSubmit(data) {
@@ -17,9 +22,9 @@ export default function singIn() {
     <>
       <img src={logo} alt="GoBarber"/>
       
-      <Form onSubmit={handleSubmit}>
+      <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="email" type="email" placeholder="Seu e-mail" />
-        <Input tname="password" ype="password" placeholder="Sua senha senha" />
+        <Input name="password" ype="password" placeholder="Sua senha senha" />
 
         <button type="submit"> Acessar </button>
         <Link to="/register" > Criar conta gratuita </Link>
