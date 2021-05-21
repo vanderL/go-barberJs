@@ -30,7 +30,7 @@ export default function SingIn() {
       
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="email" type="email" placeholder="Seu e-mail" />
-        <Input name="password" ype="password" placeholder="Sua senha senha" />
+        <Input name="password" type="password" placeholder="Sua senha senha" />
 
         <button type="submit"> Acessar </button>
         <Link to="/register" > Criar conta gratuita </Link>
