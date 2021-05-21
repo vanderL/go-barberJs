@@ -13,8 +13,10 @@ const schema = Yup.object().shape({
   email: Yup.string()
     .email('Isira um e-mail válido')
     .required('O email é obrigatorio'),
+
     password: Yup.string().min(6, 'Minimo 6 caracteres').required('A senha é obrigatório'),
   });
+
 
 export default function SingUp() {
   
