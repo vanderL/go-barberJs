@@ -1,11 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+
+import {useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 
 import * as Yup from 'yup';
 
-import { signInRequest } from '../../store/modules/auth/action';
+import { signInRequest } from '../../store/modules/auth/actions';
 
 import logo from '../../assets/logo.svg';
 
@@ -29,7 +30,7 @@ export default function SingIn() {
       
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="email" type="email" placeholder="Seu e-mail" />
-        <Input name="password" type="password" placeholder="Sua senha senha" />
+        <Input name="password" ype="password" placeholder="Sua senha senha" />
 
         <button type="submit"> Acessar </button>
         <Link to="/register" > Criar conta gratuita </Link>
